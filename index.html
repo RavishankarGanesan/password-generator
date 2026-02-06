@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Password Generator</h2>
+
+    <!-- Mode selection -->
+    <div class="mode">
+        <label>
+            <input type="radio" name="mode" checked onclick="showAuto()">
+            Auto Generate Password
+        </label>
+        <label>
+            <input type="radio" name="mode" onclick="showManual()">
+            Create My Own Password
+        </label>
+    </div>
+
+    <!-- MANUAL PASSWORD -->
+    <div id="manualBox" style="display:none;">
+        <label>Enter Your Password</label>
+        <input type="text" id="manualPassword" placeholder="Type your password">
+        <button onclick="checkStrength()">Check Strength</button>
+        <p id="strength">Password Strength: Weak (0%)</p>
+    </div>
+
+    <!-- AUTO GENERATE -->
+    <div id="autoBox">
+        <label>Password Length (min 12)</label>
+        <input type="number" id="length" value="12" min="12">
+
+        <!-- Enable / Disable Toggles -->
+        <div class="options">
+            <div class="toggle">
+                <span>Uppercase</span>
+                <label class="switch">
+                    <input type="checkbox" id="upper" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="toggle">
+                <span>Lowercase</span>
+                <label class="switch">
+                    <input type="checkbox" id="lower" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="toggle">
+                <span>Digits</span>
+                <label class="switch">
+                    <input type="checkbox" id="digit" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="toggle">
+                <span>Symbols</span>
+                <label class="switch">
+                    <input type="checkbox" id="symbol" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <button onclick="generatePassword()">Generate Password</button>
+        <input type="text" id="result" readonly placeholder="Generated password">
+    </div>
+</div>
+
+<script src="pass.js"></script>
+</body>
+</html>

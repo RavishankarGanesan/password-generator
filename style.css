@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #ffffff;
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.78);
+    padding: 25px;
+    width: 370px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* inputs & buttons */
+input, button {
+    width: 100%;
+    padding: 11px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+    font-size: 14px;
+}
+
+button {
+    background: #4caf50;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #43a047;
+}
+
+/* radio buttons spacing FIXED */
+.mode {
+    text-align: left;
+    margin-bottom: 4px;
+}
+
+.mode label {
+    display: flex;
+    align-items: center;
+    gap: 2px;          /* ⬅ reduce gap */
+    margin: 2px 0;
+    line-height: 1.2;
+}
+
+/* remove default radio spacing */
+.mode input[type="radio"] {
+    margin: 0;        /* ⬅ VERY IMPORTANT */
+}
+
+/* toggle layout */
+.options {
+    margin: 12px 0;
+}
+
+.toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 8px 0;
+}
+
+/* switch design */
+.switch {
+    position: relative;
+    width: 46px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    inset: 0;
+    background-color: #ccc;
+    border-radius: 24px;
+    transition: 0.4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+.switch input:checked + .slider {
+    background-color: #4caf50;
+}
+
+.switch input:checked + .slider:before {
+    transform: translateX(22px);
+}
+
+/* strength text */
+#strength {
+    font-weight: bold;
+    margin-top: 6px;
+}
